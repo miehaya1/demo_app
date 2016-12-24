@@ -1,0 +1,29 @@
+<h1>Listing tacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Detail</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tacks.each do |tack| %>
+      <tr>
+        <td><%= tack.title %></td>
+        <td><%= tack.detail %></td>
+        <td><%= link_to 'Show', tack %></td>
+        <td><%= link_to 'Edit', edit_tack_path(tack) %></td>
+        <td><%= link_to 'Destroy', tack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tack', new_tack_path %>
